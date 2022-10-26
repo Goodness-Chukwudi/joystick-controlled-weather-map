@@ -1,0 +1,10 @@
+.map {
+    background-image: url("https://www.outsideonline.com/wp-content/uploads/2019/04/25/scattered-showers-radar_h.jpg?crop=16:9&width=960&enable=upscale&quality=100");
+    background-size: cover;
+}
+
+#gif {
+    width: 15%;
+    top: 40%;
+    left: 40%;
+}
