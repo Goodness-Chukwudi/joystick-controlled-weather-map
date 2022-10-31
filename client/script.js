@@ -1,13 +1,20 @@
 
 const url = "wss://weather-man-map.herokuapp.com";
+// const url = "ws://localhost:5000";
 const socket = new WebSocket(url);
 const gif = document.getElementById("gif");
-const x = gif.offsetTop;
-const y = gif.offsetLeft;
+let x = gif.offsetTop;
+let y = gif.offsetLeft;
+
+onload = (event) => {
+    const data = JSON.stringify({initialPosition: {x, y}});
+    socket.send(data)
+};
 
 socket.onmessage = (event) => {
     const data = JSON.parse(event.data);
-
-    gif.style.left = `${data.x + x}px`;
-    gif.style.top = `${data.y + y}px`;
+    if (!data.initialPosition) {
+        gif.style.left = `${data.x}px`;
+        gif.style.top = `${data.y}px`;
+    }
 }
