@@ -17,7 +17,6 @@ wsServer.on("connection", (ws) => {
   console.log("Connected to web socket")
     ws.on("message", (msg) => { 
       const data = JSON.parse(msg.toString()) ;
-      
         wsServer.clients.forEach( client => {
             if (client.readyState === WebSocket.OPEN) {
               client.send(JSON.stringify(data));
