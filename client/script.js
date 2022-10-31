@@ -1,6 +1,6 @@
 
-// const url = "wss://weather-man-map.herokuapp.com";
-const url = "ws://localhost:5000";
+const url = "wss://weather-man-map.herokuapp.com";
+// const url = "ws://localhost:5000";
 const socket = new WebSocket(url);
 const gif = document.getElementById("gif");
 
